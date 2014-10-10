@@ -1,0 +1,59 @@
+/* Page layout */
+#page_container {
+    width: 960px;
+    margin: 0 auto 0 auto;
+}
+
+
+/* Font selection */
+body {
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.5;
+}
+
+
+/* Headings */
+h1 {
+    margin: 0.5em 0 0.75em 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+h2 {
+    margin: 1em 0 0.25em 0;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+}
+h3 {
+    margin: 1em 0 0.25em 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+h4 {
+    margin: 0 0 1em 0;
+    font-size: 14px;
+    font-style: italic;
+}
+h4.date_range { float: right; }
+
+
+/* Lists */
+ul {
+    margin: 0 0 0 3em;
+    list-style-type: disc;
+}
+li { margin: 0 0 0.5em 0; }
+
+
+/* Skills list */
+span.skill_name { font-weight: bold; }
+
+
+/* Biographical header */
+header { height: 154px; }
+header > img {
+    float: right;
+    width: 150px;
+    heigth: 150px;
+    padding: 1px;
+    border: 1px solid black;
+}
