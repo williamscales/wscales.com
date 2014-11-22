@@ -1,0 +1,15 @@
+---
+- name: check or build webserver image
+  docker_image: path="{{ images_source_path }}/nginx"
+    name="{{ repository_name }}/nginx" state=present
+    docker_url="{{ docker_url }}"
+
+- name: check or build dbserver image
+  docker_image: path="{{ images_source_path }}/postgres"
+    name="{{ repository_name }}/postgres" state=present
+    docker_url="{{ docker_url }}"
+
+- name: check or build app image
+  docker_image: path="{{ app_source_path }}"
+    name="{{ repository_name }}/wscales_com" state=present
+    docker_url="{{ docker_url }}"

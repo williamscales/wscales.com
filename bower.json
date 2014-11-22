@@ -1,0 +1,23 @@
+{
+  "name": "wscales.com",
+  "version": "0.1",
+  "authors": [
+    "William Scales <william.scales@zzw.ca>"
+  ],
+  "description": "William Scales' personal website",
+  "license": "Apache License, Version 2.0",
+  "homepage": "https://wscales.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "wscales_com/test",
+    "wscales_com/tests",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}

@@ -1,0 +1,5 @@
+---
+images_source_path: /home/william/src/docker_images
+app_source_path: /home/william/documents/wscales.com/wscales_com
+repository_name: williamscales
+docker_url: unix://var/run/docker.sock
