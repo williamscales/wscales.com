@@ -57,3 +57,18 @@ target/
 
 # rope
 .ropeproject/
+
+# Bower
+bower_components/
+
+# NPM
+node_modules/
+
+# bootstrap build dir
+bootstrap/
+
+# jquery build dir
+jquery/
+
+# gulp
+gulp_build
