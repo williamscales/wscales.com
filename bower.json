@@ -19,5 +19,17 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.1"
+  },
+  "overrides": {
+      "bootstrap": {
+          "main": [
+              "less/!(variables).less",
+              "less/!(navs).less",
+              "less/!(type).less", 
+              "less/mixins/*",
+              "dist/fonts/*",
+              "dist/js/bootstrap.js"
+          ]
+      }
   }
 }
