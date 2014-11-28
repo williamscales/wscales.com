@@ -1,0 +1,21 @@
+{
+  "name": "wscales.com",
+  "version": "0.0.1",
+  "description": "Personal website of William Scales",
+  "main": "wscales_com/wsgi.py",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-less": "^1.3.6",
+    "main-bower-files": "^2.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "py.test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@zzw.ca:wscales.com"
+  },
+  "author": "",
+  "license": "Apache Software License"
+}
