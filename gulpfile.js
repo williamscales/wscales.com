@@ -19,13 +19,13 @@ gulp.task('bootstrap:prepareLess', ['mainBowerFiles'], function() {
         .pipe(gulp.dest('gulp_build/bootstrap/less'));
 });
 
-gulp.task(
-    'bootstrap:compileLess',
+gulp.task('bootstrap:compileLess',
     ['bootstrap:prepareLess', 'bootstrap:prepareStaticFiles'],
     function() {
         return gulp.src('gulp_build/bootstrap/less/bootstrap.less')
             .pipe(less())
-            .pipe(gulp.dest('wscales_com/zzw_theme_vertical/static/bootstrap/dist/css'));
+            .pipe(gulp.dest(
+                'wscales_com/zzw_theme_vertical/static/bootstrap/dist/css'));
     }
 );
 
