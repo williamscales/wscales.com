@@ -1,3 +1,5 @@
 Django==1.7.1
 Mezzanine==3.1.10
 psycopg2==2.5.4
+#-e git+https://github.com/williamscales/zzw_projects.git#egg=zzw_projects-master
+-e git+https://github.com/williamscales/zzw_theme_vertical.git#egg=zzw_theme_vertical-master
