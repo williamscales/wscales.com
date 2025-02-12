@@ -1,80 +1,73 @@
 :root {
-    --main-bg-color: #f3f4f6;
-    --title-color: #262626;
-    --text-color: #424242;
-    --font-family: "Lato", sans-serif;
+    color-scheme: light dark;
+    --base03: #002b36;
+    --base02: #073642;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0: #839496;
+    --base1: #93a1a1;
+    --base2: #eee8d5;
+    --base3: #fdf6e3;
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
+    --green: #859900;
 }
 
+@media (prefers-contrast: more) {
+    :root {
+        --base03: black;
+        --base02: black;
+        --base01: black;
+        --base00: black;
+        --base0: white;
+        --base1: white;
+        --base2: white;
+        --base3: white;
+        --yellow: yellow;
+        --orange: orange;
+        --red: red;
+        --magenta: magenta;
+        --violet: violet;
+        --blue: blue;
+        --cyan: cyan;
+        --green: green;
+    }
+}
+
+html,
 body {
+    background: light-dark(var(--base3), var(--base03));
+    color: light-dark(var(--base00), var(--base0));
+    font-size: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--main-bg-color);
-    font-family: var(--font-family);
 }
 
-header,
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--title-color);
-    color: white;
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: var(--cyan);
+    text-decoration: underline;
+}
+
+h1 {
+    color: light-dark(var(--base-01), var(--base1));
+    padding: 0 1rem;
+}
+
+h2 {
+    border-bottom: 1px solid light-dark(var(--base00), var(--base0));
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-header a {
-    color: white;
-}
-
-section {
-    container-type: inline-size;
-    margin: 1rem;
-    padding: 1rem;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-width: 300px;
-    width: 60%;
-    max-width: 800px;
-
-    & h2, h3 {
-	color: var(--title-color);
-	text-wrap: balance;
-    }
-
-    & h2 { 
-	margin: 0 0 1rem 0;
-	font-size: 1.25em;
-    }
-
-    & h3 {
-	margin: 0 0 0.5rem 0;
-	font-size: 1em;
-    }
-
-    & p {
-	color: var(--text-color);
-	margin: 0.5rem 0 1rem 0;
-    }
-
-    & li {
-	margin: 0 0 1rem 0;
-}
-
-@container (min-inline-size: 500px) {
-    section {
-	padding: 1.5rem;
-
-	& h2 {
-	    font-size: 1.25em;
-	}
-
-	& h3 {
-	    font-size: 1em;
-	}
-    }
+    border: 1px solid light-dark(var(--base00), var(--base0));
 }
