@@ -48,6 +48,17 @@ body {
     padding: 0;
 }
 
+@media (min-width: 980px) {
+    body {
+        width: 980px;
+        margin: auto;
+    }
+}
+
+body>* {
+    font-size: 1.1rem;
+}
+
 a {
     color: var(--blue);
     text-decoration: none;
@@ -59,15 +70,45 @@ a:active {
     text-decoration: underline;
 }
 
-h1 {
+h1,
+h2 {
     color: light-dark(var(--base-01), var(--base1));
-    padding: 0 1rem;
+}
+
+h1 {
+    margin: 0;
 }
 
 h2 {
     border-bottom: 1px solid light-dark(var(--base00), var(--base0));
+    margin: 0 0 1rem;
+}
+
+p {
+    margin: 0;
+}
+
+dt {
+    font-size: 1.17rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+dd {
+    margin-bottom: 1rem;
 }
 
 main {
-    border: 1px solid light-dark(var(--base00), var(--base0));
+    /*border: 1px solid light-dark(var(--base00), var(--base0));*/
+    padding: 1rem;
+}
+
+header,
+footer {
+    background: light-dark(var(--base2), var(--base02));
+    padding: 1rem;
+}
+
+section {
+    margin: 0 0 1rem;
 }
