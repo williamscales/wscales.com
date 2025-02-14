@@ -42,7 +42,7 @@
 html,
 body {
     background: light-dark(var(--base3), var(--base03));
-    color: light-dark(var(--base01), var(--base1));
+    color: light-dark(var(--base00), var(--base0));
     font-size: 100%;
     font-family: 'Source Serif 4';
     font-weight: 400;
@@ -72,19 +72,13 @@ a:active {
     text-decoration: underline;
 }
 
-h1,
-h2 {
-    color: light-dark(var(--base-01), var(--base1));
-}
-
 h1 {
-    font-family: "Source Code Pro";
     margin: 0;
     font-weight: 800;
 }
 
 h2 {
-    border-bottom: 1px solid light-dark(var(--base00), var(--base0));
+    border-bottom: 1px solid light-dark(var(--base01), var(--base1));
     margin: 0 0 1rem;
     font-weight: 600;
 }
@@ -111,6 +105,8 @@ main {
 header,
 footer {
     background: light-dark(var(--base2), var(--base02));
+    color: light-dark(var(--base01), var(--base1));
+    font-family: "Source Code Pro";
     padding: 1rem;
 }
 
