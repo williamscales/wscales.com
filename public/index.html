@@ -16,84 +16,99 @@
 	<link rel="icon" href="favicon.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+	<script lang="javascript">
+		const toggleLightDark = () => {
+			const currentScheme = document.documentElement.style.colorScheme;
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			document.documentElement.style.colorScheme = (
+				currentScheme === 'dark' || (currentScheme === '' && prefersDark)
+					? 'light'
+					: 'dark'
+			);
+		}
+	</script>
+
 	<title>William Scales</title>
 </head>
 
 <body>
-	<header>
-		<h1>William Scales</h1>
-		<h1 style="color: var(--violet)">&gt;&gt;&gt;</h1>
-	</header>
-	<main>
-		<section>
-			<h2>Software Engineer</h2>
-			<address>
-				Golden, CO (open to relocate)
-			</address>
-			<br>
+	<div class="wrapper">
+		<header>
+			<h1>William Scales</h1>
+			<h2>&gt;&gt;&gt;</h2>
+		</header>
+
+		<main>
+			<section>
+				<p>Location: <em>Golden, CO, USA</em> (open to relocate)</p>
+				<p>Email: <a href="mailto:hi@wscales.com">hi@wscales.com</a></p>
+				<p>LinkedIn: <a href="https://linkedin.com/in/williamscales">here</a></p>
+			</section>
+
+			<section>
+				<h2>Skills</h2>
+				<dl>
+					<dt>Software Engineering</dt>
+					<dd>
+						Full stack developer, familiar with agile methods
+						and TDD. Able to quickly learn new languages and
+						methodologies. Intuitively able to understand
+						abstractions.
+					</dd>
+					<dt>Data analysis and diagnostics</dt>
+					<dd>
+						Skilled at quickly grasping the meaning behind
+						large data sets, understanding them using
+						models, and translating them to relational
+						databases. Able to write code for data
+						analysis.
+					</dd>
+					<dt>System administration</dt>
+					<dd>
+						Experienced with networking, security, and
+						operations on Linux, Windows, and MacOS
+						systems. Have managed several small networks.
+					</dd>
+					<dt>Cross functional teams</dt>
+					<dd>
+						Experienced at working with diverse teams to
+						build software and get things done.
+					</dd>
+				</dl>
+			</section>
+
+			<section>
+				<h2>Software Development</h2>
+				<p>
+					Proficient in Python, PHP, Ruby, Javascript, Bash, SQL,
+					HTML and CSS. Working knowledge of C, Java, Perl. Some
+					experience with Assembly and Haskell.
+				</p>
+				<dl>
+					<dt>Python</dt>
+					<dd>
+						14 years experience with python. Scientific python experience
+						including numpy, scipy, pandas, scikit-learn.
+					</dd>
+					<dt>Tooling</dt>
+					<dd>
+						Familiar with software lifecycle and development
+						process in bare-metal and cloud
+						environments. Proficient in Docker and Kubernetes.
+					</dd>
+				</dl>
+			</section>
+		</main>
+
+		<footer>
 			<p>
-				<a href="https://linkedin.com/in/williamscales">See my LinkedIn</a>
+				<small>Colors: <button onClick="toggleLightDark();">&#9681; Light / Dark</button></small>
 			</p>
 			<p>
-				<a href="mailto:hi@wscales.com">Email me</a>
+				<small>Copyright: William Scales</small>
 			</p>
-		</section>
-		<section>
-			<h2>Skills</h2>
-			<dl>
-				<dt>Software Engineering</dt>
-				<dd>
-					Full stack developer, familiar with agile methods
-					and TDD. Able to quickly learn new languages and
-					methodologies. Intuitively able to understand
-					abstractions.
-				</dd>
-				<dt>Data analysis and diagnostics</dt>
-				<dd>
-					Skilled at quickly grasping the meaning behind
-					large data sets, understanding them using
-					models, and translating them to relational
-					databases. Able to write code for data
-					analysis.
-				</dd>
-				<dt>System administration</dt>
-				<dd>
-					Experienced with networking, security, and
-					operations on Linux, Windows, and MacOS
-					systems. Have managed several small networks.
-				</dd>
-				<dt>Cross functional teams</dt>
-				<dd>
-					Experienced at working with diverse teams to
-					build software and get things done.
-				</dd>
-			</dl>
-		</section>
-		<section>
-			<h2>Software Development</h2>
-			<p>
-				Proficient in Python, PHP, Ruby, Javascript, Bash, SQL,
-				HTML and CSS. Working knowledge of C, Java, Perl. Some
-				experience with Assembly and Haskell.
-			</p>
-			<dl>
-				<dt>Python</dt>
-				<dd>
-					14 years experience with python. Scientific python experience
-					including numpy, scipy, pandas, scikit-learn.
-				</dd>
-				<dt>Tooling</dt>
-				<dd>
-					Familiar with software lifecycle and development
-					process in bare-metal and cloud
-					environments. Proficient in Docker and Kubernetes.
-				</dd>
-			</dl>
-		</section>
-	</main>
-	<footer>
-		<small>&copy; William Scales</small>
-	</footer>
+		</footer>
+	</div>
 </body>
 
 </html>
