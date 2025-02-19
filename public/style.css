@@ -85,7 +85,6 @@ footer {
 }
 
 header>h2 {
-    color: light-dark(var(--header-subhead-light), var(--header-subhead-dark));
     margin: 0;
 }
 
@@ -100,6 +99,10 @@ section {
 /*
  * Text elements 
  */
+
+header>h2 {
+    color: light-dark(var(--header-subhead-light), var(--header-subhead-dark));
+}
 
 a,
 a:visited,
@@ -145,6 +148,12 @@ h2 {
 p {
     margin: 0;
 }
+
+dt::before {
+    color: light-dark(var(--header-subhead-light), var(--header-subhead-dark));
+    content: "\3E\A0";
+}
+
 
 dt {
     font-size: 1.2rem;
