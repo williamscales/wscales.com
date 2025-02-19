@@ -113,6 +113,7 @@ a:active,
 a:focus,
 button:hover {
     color: light-dark(var(--link-hover-light), var(--link-hover-dark));
+    cursor: pointer;
     text-decoration: underline;
 }
 
