@@ -4,8 +4,8 @@
 
 :root {
     color-scheme: light dark;
-    --base-light: white;
-    --base-dark: #11111a;
+    --base-light: #fffbfb;
+    --base-dark: #11111f;
     --header-subhead-light: rebeccapurple;
     --header-subhead-dark: rebeccapurple;
     --link-light: darkgreen;
