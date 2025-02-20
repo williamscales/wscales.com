@@ -8,10 +8,10 @@
     --base-dark: #11111f;
     --header-subhead-light: rebeccapurple;
     --header-subhead-dark: rebeccapurple;
-    --link-light: darkgreen;
+    --link-light: green;
     --link-dark: deepskyblue;
-    --link-hover-light: teal;
-    --link-hover-dark: teal;
+    --link-hover-light: deepskyblue;
+    --link-hover-dark: green;
     --serif-font: "Source Serif 4";
     --sans-serif-font: "Source Code Pro";
 }
@@ -70,18 +70,18 @@ body>* {
     font-size: 1.1rem;
 }
 
+header,
+footer {
+    font-family: var(--sans-serif-font);
+    padding: 1rem;
+}
+
 header {
     border-bottom: 1px solid light-dark(var(--base-dark), var(--base-light));
 }
 
 footer {
     border-top: 1px solid light-dark(var(--base-dark), var(--base-light));
-}
-
-header,
-footer {
-    font-family: var(--sans-serif-font);
-    padding: 1rem;
 }
 
 header>h2 {
@@ -100,8 +100,10 @@ section {
  * Text elements 
  */
 
-header>h2 {
+.header-subhead {
     color: light-dark(var(--header-subhead-light), var(--header-subhead-dark));
+    font-size: 1.8rem;
+    font-weight: 800;
 }
 
 a,
@@ -124,7 +126,7 @@ button {
     background-color: transparent;
     border: none;
     font-family: var(--sans-serif-font);
-    font-size: 0.89rem;
+    font-size: 100%;
     padding: 0;
 }
 
@@ -151,7 +153,9 @@ p {
 
 dt::before {
     color: light-dark(var(--header-subhead-light), var(--header-subhead-dark));
-    content: "\3E\A0";
+    content: "\3E";
+    margin-right: 0.7rem;
+    font-weight: 800;
 }
 
 
