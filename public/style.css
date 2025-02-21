@@ -66,10 +66,6 @@ body {
     padding: 0;
 }
 
-body>* {
-    font-size: 1.1rem;
-}
-
 header,
 footer {
     font-family: var(--sans-serif-font);
@@ -84,21 +80,21 @@ footer {
     border-top: 1px solid light-dark(var(--base-dark), var(--base-light));
 }
 
-header>h2 {
-    margin: 0;
-}
-
 main {
     padding: 1rem;
 }
 
 section {
-    margin: 0 0 1rem;
+    margin: 0 0 1.5rem;
 }
 
 /*
  * Text elements 
  */
+
+body>* {
+    font-size: 1.1rem;
+}
 
 .header-subhead {
     color: light-dark(var(--header-subhead-light), var(--header-subhead-dark));
