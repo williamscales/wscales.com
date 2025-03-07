@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 77.04"><g id="a"><rect y="5.52" width="48" height="48" style="fill:#131320;"/></g><g id="b"><path d="M11.64,48.36v-9.24l15.12-9.12v-.24l-15.12-9.12v-9.24l23.52,15v6.96l-23.52,15Z" style="fill:#663695;"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        #background {
+            fill: light-dark(#fffbfb, #11111f);
+        }
+
+        #text {
+            fill: #663399;
+        }
+    </style>
+    <rect id="background" width="128" height="128" />
+    <polyline id="text" points="16,16 112,64 16,112 16,90 80,64 16,38" />
+</svg>
