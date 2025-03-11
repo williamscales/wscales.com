@@ -18,6 +18,19 @@
 	<link rel="icon" type="image/png" href="favicon.png" sizes="any">
 	<link rel="stylesheet" href="style.css">
 	<link rel="canonical" href="https://wscales.com/">
+	<link rel="me" href="https://mastodon.social/@wscales">
+
+	<script>
+		const toggleLightDark = () => {
+			const currentScheme = document.documentElement.style.colorScheme;
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			document.documentElement.style.colorScheme = (
+				currentScheme === 'dark' || (currentScheme === '' && prefersDark)
+					? 'light'
+					: 'dark'
+			);
+		}
+	</script>
 </head>
 
 <body>
@@ -98,15 +111,3 @@
 </body>
 
 </html>
-
-<script>
-	const toggleLightDark = () => {
-		const currentScheme = document.documentElement.style.colorScheme;
-		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-		document.documentElement.style.colorScheme = (
-			currentScheme === 'dark' || (currentScheme === '' && prefersDark)
-				? 'light'
-				: 'dark'
-		);
-	}
-</script>
