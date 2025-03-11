@@ -13,5 +13,5 @@
         }
     </style>
     <rect id="background" width="128" height="128" />
-    <polyline id="text" points="16,16 112,64 16,112 16,90 80,64 16,38" />
+    <polyline id="text" points="32,16 104,57 104,73 32,112 32,90 84,64 32,38" />
 </svg>
