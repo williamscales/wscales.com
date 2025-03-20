@@ -21,7 +21,7 @@ jobs:
 
       - name: Build
         run: |
-          sh python bin/build.py
+          python bin/build.py
 
       - name: Deploy to S3
         run: |
@@ -29,4 +29,4 @@ jobs:
 
       - name: Invalidate CloudFront cache
         run: |
-          bin/invalidate-cloudfront.sh "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }}"
+          sh bin/invalidate-cloudfront.sh "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }}"
