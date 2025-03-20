@@ -21,11 +21,11 @@ jobs:
 
       - name: Build
         run: |
-          python bin/build.py
+          sh python bin/build.py
 
       - name: Deploy to S3
         run: |
-          bin/deploy-s3.sh "${{ secrets.AWS_S3_BUCKET }}"
+          sh bin/deploy-s3.sh "${{ secrets.AWS_S3_BUCKET }}"
 
       - name: Invalidate CloudFront cache
         run: |
