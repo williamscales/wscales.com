@@ -2,7 +2,7 @@ name: Deploy wscales.com to S3
 
 on:
   push:
-    branches: [main]
+    branches: [deployment-workflow]
 
 jobs:
   deploy:
@@ -21,12 +21,12 @@ jobs:
 
       - name: Build
         run: |
-          python build.py
+          python bin/build.py
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET }} --delete
+          bin/deploy-s3.sh "${{ secrets.AWS_S3_BUCKET }}"
 
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation --distribution-id E12V99G6HEHQ3I --paths '/*'
+          bin/invalidate-cloudfront.sh "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }}"
