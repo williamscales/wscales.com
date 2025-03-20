@@ -2,7 +2,7 @@ name: Deploy wscales.com to S3
 
 on:
   push:
-    branches: [node-static-build]
+    branches: [main]
 
 jobs:
   deploy:
