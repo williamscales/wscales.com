@@ -2,7 +2,7 @@ name: Deploy wscales.com to S3
 
 on:
   push:
-    branches: [deployment-workflow]
+    branches: [main]
 
 jobs:
   deploy:
