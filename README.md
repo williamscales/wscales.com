@@ -10,13 +10,17 @@ Cloudfront serves the static site from an S3 bucket.
 
 ### Pages
 
-Pages are fragments of HTML in `pages/`.
+Pages are HTML files in `pages/`. They are fragments that will be inserted inside a `<main>` tag in the final HTML.
 
-Pages have hardcoded metadata in `bin/build.py`, no autodiscovery.
+The first line of the file is taken as the page title and stripped before rendering the page.
+
+The output path will be the filename minus '.html'. For example, `pages/about.html` → `build/about/index.html`
 
 ### Layouts
 
-Layouts live in `layouts/` and have a couple fields that are substituted when rendering: `{{page_content}}` and `{{page_title}}`.
+Layouts live in `layouts/`. The default is `layouts/default.html`. 
+
+A couple template tags are substituted when rendering: `{{page_content}}` and `{{page_title}}`.
 
 ```html
 <html>
@@ -35,20 +39,7 @@ Layouts live in `layouts/` and have a couple fields that are substituted when re
 
 Static files live in `static/`. Building copies the contents of this directory to the build root.
 
-### Adding a New Page
-1. Write the page as a new HTML fragment file in `pages/`.
-2. Update `pages` data structure in `bin/build.py` with the HTML fragment path and page metadata.
-
 ## Build and Deploy
-
-### Environment Variables
-
-```sh
-AWS_ACCESS_KEY_ID
-AWS_CLOUDFRONT_DISTRIBUTION
-AWS_S3_BUCKET
-AWS_SECRET_ACCESS_KEY
-```
 
 ### Build
 
@@ -58,7 +49,28 @@ python bin/build.py
 
 Output is in `build/` directory.
 
+### Development
+
+```sh
+python -m http.server -d build 8000
+```
+
+Serves on [localhost:8000](http://localhost:8000).
+
 ### Deploy
+
+Using GitHub Actions: `.github/workflows/deploy.yml`.
+
+#### Environment Variables
+
+```sh
+AWS_ACCESS_KEY_ID
+AWS_CLOUDFRONT_DISTRIBUTION
+AWS_S3_BUCKET
+AWS_SECRET_ACCESS_KEY
+```
+
+#### Scripts
 
 ```sh
 sh bin/deploy-s3.sh
