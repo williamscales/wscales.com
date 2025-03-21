@@ -1,3 +1,5 @@
+![logo](/static/favicon.svg)
+
 # wscales.com
 
 Source code for [wscales.com](https://wscales.com/) static site.
