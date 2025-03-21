@@ -25,17 +25,20 @@ def get_pages() -> list[str]:
     return os.listdir(PAGE_ROOT)
 
 
-def get_page(page_path: str) -> str:
+def get_page(page_path: str) -> tuple[str, str]:
     """Get the page content from a file."""
     with open(os.path.join(PAGE_ROOT, page_path), "r") as f:
-        return f.read()
+        page_content = f.read()
+        page_title = page_content.split("\n")[0]
+        page_content = "\n".join(page_content.split("\n")[1:])
+        return page_content, page_title
 
 
 def render_page(page_path: str, layout: str) -> str:
     """Render a page from a layout and a page."""
-    page_content = get_page(page_path)
+    page_content, page_title = get_page(page_path)
     return layout.replace("{{page_content}}", page_content).replace(
-        "{{page_title}}", "TITLE"
+        "{{page_title}}", page_title
     )
 
 
