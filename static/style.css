@@ -68,7 +68,6 @@ body {
 
 header,
 footer {
-    font-family: var(--sans-serif-font);
     padding: 1rem;
 }
 
@@ -126,8 +125,8 @@ button {
     padding: 0;
 }
 
-h1,
-h2,
+header,
+footer,
 dt {
     font-family: var(--sans-serif-font);
 }
@@ -142,6 +141,9 @@ h2 {
     font-weight: 600;
 }
 
+nav a {
+    font-weight: 600;
+}
 
 p {
     margin: 0;
