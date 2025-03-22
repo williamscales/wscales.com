@@ -51,11 +51,11 @@ Output is in `build/` directory.
 
 ### Development
 
+Hot reloadable dev server:
 ```sh
-python -m http.server -d build 8000
+pip install -r requirements-dev.txt
+python bin/dev.py
 ```
-
-Serves on [localhost:8000](http://localhost:8000).
 
 ### Deploy
 

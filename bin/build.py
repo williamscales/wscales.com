@@ -10,8 +10,10 @@ STATIC_ROOT = "static"
 def check_build_root() -> None:
     """Delete the build root and create a new one."""
     if os.path.exists(BUILD_ROOT):
+        print("Deleting build root...")
         shutil.rmtree(BUILD_ROOT)
     os.makedirs(BUILD_ROOT)
+    print("Build root created")
 
 
 def get_layout(layout_path: str = "default.html") -> str:
@@ -44,6 +46,7 @@ def render_page(page_path: str, layout: str) -> str:
 
 def render_pages(pages: list[str], layout: str) -> None:
     """Render all pages and save them to the build root."""
+    print("Rendering pages...")
     for page_path in pages:
         page_name = page_path.replace(".html", "")
 
@@ -63,6 +66,7 @@ def render_pages(pages: list[str], layout: str) -> None:
 
 def copy_static() -> None:
     """Copy all files in the static directory to the build root."""
+    print("Copying static files...")
     for item in os.listdir(STATIC_ROOT):
         source_path = os.path.join(STATIC_ROOT, item)
         destination_path = os.path.join(BUILD_ROOT, item)
@@ -77,11 +81,13 @@ def copy_static() -> None:
 
 def build() -> None:
     """Build the website."""
+    print("Building...")
     check_build_root()
     layout = get_layout()
     pages = get_pages()
     render_pages(pages, layout)
     copy_static()
+    print("Build complete")
 
 
 if __name__ == "__main__":
