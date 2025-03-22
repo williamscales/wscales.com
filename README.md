@@ -14,7 +14,7 @@ Pages are HTML files in `pages/`. They are fragments that will be inserted insid
 
 The first line of the file is taken as the page title and stripped before rendering the page.
 
-The output path will be the filename minus '.html'. For example, `pages/about.html` → `build/about/index.html`
+The output path will be the filename minus `.html`. For example, `pages/about.html` → `build/about/index.html`
 
 ### Layouts
 

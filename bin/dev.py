@@ -1,21 +1,20 @@
+from collections.abc import Callable
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 import os
 import re
 import threading
 import time
+from typing import Any
 from watchdog.observers import Observer
 from watchdog.events import (
     PatternMatchingEventHandler,
 )
-from build import build, BUILD_ROOT
-
-PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "..")
-BUILD_DIR = os.path.join(PROJECT_ROOT, BUILD_ROOT)
+from build import build, BUILD_ROOT, PROJECT_ROOT
 
 
 class RequestHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=BUILD_DIR, **kwargs)
+        super().__init__(*args, directory=BUILD_ROOT, **kwargs)
 
 
 class DevServer:
@@ -60,7 +59,7 @@ class Debouncer:
         self.delay = delay
         self.timer = None
 
-    def debounce(self, func):
+    def debounce(self, func: Callable[..., None]) -> Callable[..., None]:
         def wrapper(*args, **kwargs):
             if self.timer:
                 self.timer.cancel()

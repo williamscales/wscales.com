@@ -1,24 +1,27 @@
 import os
 import shutil
 
-BUILD_ROOT = "build"
-LAYOUT_ROOT = "layouts"
-PAGE_ROOT = "pages"
-STATIC_ROOT = "static"
+PROJECT_ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
+BUILD_ROOT = os.path.join(PROJECT_ROOT, "build")
+LAYOUT_ROOT = os.path.join(PROJECT_ROOT, "layouts")
+PAGE_ROOT = os.path.join(PROJECT_ROOT, "pages")
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
 
-def check_build_root() -> None:
+def check_build_root():
     """Delete the build root and create a new one."""
     if os.path.exists(BUILD_ROOT):
         print("Deleting build root...")
         shutil.rmtree(BUILD_ROOT)
     os.makedirs(BUILD_ROOT)
-    print("Build root created")
+    print(f"Build root created at {BUILD_ROOT}")
 
 
-def get_layout(layout_path: str = "default.html") -> str:
+def get_layout(layout_file: str = "default.html") -> str:
     """Get the layout content from a file."""
-    with open(os.path.join(LAYOUT_ROOT, layout_path), "r") as f:
+    layout_path = os.path.join(LAYOUT_ROOT, layout_file)
+    print(f"Got layout from {layout_path}")
+    with open(layout_path, "r") as f:
         return f.read()
 
 
@@ -44,7 +47,7 @@ def render_page(page_path: str, layout: str) -> str:
     )
 
 
-def render_pages(pages: list[str], layout: str) -> None:
+def render_pages(pages: list[str], layout: str):
     """Render all pages and save them to the build root."""
     print("Rendering pages...")
     for page_path in pages:
@@ -56,30 +59,30 @@ def render_pages(pages: list[str], layout: str) -> None:
             output_dir = os.path.join(BUILD_ROOT, page_name)
         output_path = os.path.join(output_dir, "index.html")
 
-        print(output_path)
-
         os.makedirs(output_dir, exist_ok=True)
 
         with open(output_path, "w") as f:
             f.write(render_page(page_path, layout))
 
+        print(f"Rendered {os.path.join(PAGE_ROOT, page_path)} to {output_path}")
 
-def copy_static() -> None:
+
+def copy_static():
     """Copy all files in the static directory to the build root."""
     print("Copying static files...")
     for item in os.listdir(STATIC_ROOT):
         source_path = os.path.join(STATIC_ROOT, item)
         destination_path = os.path.join(BUILD_ROOT, item)
 
-        print(destination_path)
-
         if os.path.isfile(source_path):
             shutil.copy2(source_path, destination_path)
         elif os.path.isdir(source_path):
             shutil.copytree(source_path, destination_path, dirs_exist_ok=True)
 
+        print(f"Copied {source_path} to {destination_path}")
 
-def build() -> None:
+
+def build():
     """Build the website."""
     print("Building...")
     check_build_root()
