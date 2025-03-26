@@ -24,16 +24,16 @@ class DevServer:
         self.stop_event = threading.Event()
 
     def _serve(self):
-        print("Starting server...")
+        print("🚀 Starting server...")
         server_thread = threading.Thread(target=self.httpd.serve_forever)
         server_thread.start()
-        print("Server running on http://localhost:8000")
+        print("✅ Server running on http://localhost:8000")
 
         self.reload_event.wait()
         if self.stop_event.is_set():
-            print("Stopping server...")
+            print("👋 Stopping server...")
         else:
-            print("Reloading server...")
+            print("🔄 Reloading server...")
 
         self.httpd.shutdown()
         server_thread.join()
@@ -84,7 +84,7 @@ class DevEventHandler(PatternMatchingEventHandler):
 
     def __on_modified(self, event):
         if not re.match(r".*build.*", event.src_path):
-            print(f"File {event.src_path} has been modified")
+            print(f"👀 File {event.src_path} has been modified")
             build()
             self.server.reload()
 
@@ -101,12 +101,13 @@ def watch():
     observer.schedule(event_handler, path=PROJECT_ROOT, recursive=True)
     observer.start()
 
-    print("Watching for changes...")
+    print("🔍 Watching for changes...")
 
     try:
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
+        print("👋 Shutting down...")
         observer.stop()
         server.stop()
 
